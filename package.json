@@ -1,0 +1,1 @@
+{"name":"pv-bundle","private":true,"type":"module","scripts":{"start":"node server.mjs","pack":"node pack.mjs"}}
