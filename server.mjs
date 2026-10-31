@@ -57,6 +57,21 @@ for(const id of [...data.variants.filter(v=>v.id!=='V').map(v=>v.id),'plan']) {
  .replace('<nav class="rail" aria-label="Inert X navigation"></nav>',`<nav class="rail" aria-label="Preview navigation"><a class="rail-item" href="${config.prefix}">${view.icon('x')}</a></nav>`);
  const dir=path.join(root,id);fs.mkdirSync(dir,{mode:0o700});fs.writeFileSync(path.join(dir,'index.html'),html,{mode:0o600});
 }
+// Install badge assets only inside the existing private runtime; encrypted source stays unchanged.
+for (const name of ['artifact-badges.js','artifact-badges.css'])
+ fs.copyFileSync(path.join(here,'artifact-assets',name),path.join(root,name));
+function stampArtifactPages(dir) {
+ for (const entry of fs.readdirSync(dir,{withFileTypes:true})) {
+  const file=path.join(dir,entry.name);
+  if(entry.isDirectory())stampArtifactPages(file);
+  else if(entry.name.endsWith('.html')) {
+   const html=fs.readFileSync(file,'utf8');
+   const assets=`<link rel="stylesheet" href="${config.prefix}artifact-badges.css"><script defer src="${config.prefix}artifact-badges.js"></script>`;
+   fs.writeFileSync(file,html.replace(/<\/head>/i,assets+'</head>'),{mode:0o600});
+  }
+ }
+}
+stampArtifactPages(root);
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.mp4':'video/mp4','.jpg':'image/jpeg','.png':'image/png','.woff2':'font/woff2','.svg':'image/svg+xml','.txt':'text/plain; charset=utf-8','.md':'text/plain; charset=utf-8','.jpeg':'image/jpeg','.webp':'image/webp','.gif':'image/gif','.mov':'video/quicktime','.webm':'video/webm'};
 const headers={'X-Robots-Tag':'noindex, nofollow','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff','Cache-Control':'private, no-store','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"};
 // Append-only planner storage. Credentials and documents are never logged.
