@@ -5,6 +5,7 @@ ENV NODE_OPTIONS="--use-openssl-ca"
 RUN apk add --no-cache curl
 WORKDIR /app
 COPY --chown=node:node server.mjs ./
+COPY --chown=node:node artifact-assets/ ./artifact-assets/
 COPY --chown=node:node enc/ ./enc/
 USER node
 ENV PORT=8080
