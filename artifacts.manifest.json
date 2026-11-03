@@ -1,0 +1,210 @@
+{
+  "surface": "app:tweet-planner",
+  "items": {
+    "app": {
+      "kind": "app",
+      "title": "Tweet Planner und Vorschau",
+      "summary": "Zeigt private Beitragsentwürfe und ihre Vorschau. Entwürfe und Versionen bleiben von einer Veröffentlichung getrennt.",
+      "selector": "main > header",
+      "id": "805c51",
+      "parent": null,
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "56dbce"
+        }
+      ],
+      "access": "internal"
+    },
+    "summary": {
+      "kind": "panel",
+      "title": "Entwurfszusammenfassung",
+      "summary": "Fasst den ausgewählten Entwurf zusammen. Die darunterliegende Ansicht zeigt dessen Inhalt.",
+      "selector": "#summary",
+      "id": "cdcdcf",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "thread": {
+      "kind": "panel",
+      "title": "Beitragsarbeitsbereich",
+      "summary": "Zeigt den ausgewählten Arbeitsbereich für die Beitragsfolge. Die Register wechseln zwischen Planung, Bearbeitung und Vorschau.",
+      "selector": "#thread",
+      "id": "edf2ab",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "thread-list": {
+      "kind": "panel",
+      "title": "Gespeicherte Entwürfe",
+      "summary": "Listet die gespeicherten Beitragsfolgen. Eine Auswahl öffnet den entsprechenden Entwurf zur Bearbeitung.",
+      "selector": ".planner-list",
+      "id": "cbb31f",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "71f933"
+        }
+      ],
+      "access": "internal"
+    },
+    "editor": {
+      "kind": "panel",
+      "title": "Beitragseditor",
+      "summary": "Ermöglicht das Bearbeiten der Beiträge und ihrer Anhänge. Die danebenliegende Vorschau zeigt den aktuellen Entwurfsstand.",
+      "selector": "#post-editors",
+      "id": "71f933",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "preview": {
+      "kind": "panel",
+      "title": "Live-Vorschau",
+      "summary": "Zeigt die Beitragsfolge während der Bearbeitung. Änderungen am Entwurf werden hier sichtbar.",
+      "selector": ".preview-pane",
+      "id": "e1fedf",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "shows_data_of",
+          "to": "71f933"
+        }
+      ],
+      "access": "internal"
+    },
+    "versions": {
+      "kind": "panel",
+      "title": "Benannte Versionen",
+      "summary": "Zeigt gespeicherte Versionen und zugehörige Freigabelinks. Die Versionsauswahl bestimmt den geteilten Stand.",
+      "selector": ".versions",
+      "id": "74d093",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "a0c5a8"
+        }
+      ],
+      "access": "internal"
+    },
+    "history": {
+      "kind": "panel",
+      "title": "Änderungsverlauf",
+      "summary": "Listet frühere Stände eines Entwurfs. Die Auswahl erlaubt es, den Verlauf nachzuvollziehen.",
+      "selector": ".history",
+      "id": "a0c5a8",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    },
+    "media": {
+      "kind": "panel",
+      "title": "Medienbibliothek",
+      "summary": "Zeigt verfügbare Bilder und Videos für Entwürfe. Filter helfen bei der Auswahl geeigneter Medien.",
+      "selector": ".media-page",
+      "id": "99dff0",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [
+        {
+          "rel": "related",
+          "to": "71f933"
+        }
+      ],
+      "access": "internal"
+    },
+    "ideas": {
+      "kind": "panel",
+      "title": "Beitragsideen",
+      "summary": "Sammelt Vorschläge für neue Beiträge. Eine Idee kann als Ausgangspunkt für einen eigenen Entwurf dienen.",
+      "selector": ".ideas",
+      "id": "d5faaa",
+      "parent": "805c51",
+      "url": "https://pv-1011.app.mintapis.com",
+      "refs": [
+        {
+          "kind": "code",
+          "target": "github:fstandhartinger/pv-bundle-1011@HEAD:artifact-assets/artifact-badges.js#L3-L8",
+          "label": "Zuordnung der Artefakt-ID zur Ansicht"
+        }
+      ],
+      "links": [],
+      "access": "internal"
+    }
+  }
+}
