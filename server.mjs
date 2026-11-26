@@ -90,7 +90,7 @@ async function sql(query,params=[]) {
 function validateDoc(input,title) {
  if(!input||typeof input!=='object'||Array.isArray(input))throw jsonError(400,'Invalid document');
  const doc={title:title??input.title,posts:input.posts};
- if(input.account!==undefined&&input.account!==null){if(!['decisionmodels'].includes(input.account))throw jsonError(400,'Invalid account');doc.account=input.account;}
+ if(input.account!==undefined&&input.account!==null){if(!['decisionmodels','reaxlabs'].includes(input.account))throw jsonError(400,'Invalid account');doc.account=input.account;}
  if(typeof doc.title!=='string'||doc.title.length>200||!doc.title.trim())throw jsonError(400,'Title must be 1–200 characters');
  if(!Array.isArray(doc.posts)||doc.posts.length<1||doc.posts.length>40)throw jsonError(400,'Use 1–40 posts');
  doc.posts=doc.posts.map(p=>{
